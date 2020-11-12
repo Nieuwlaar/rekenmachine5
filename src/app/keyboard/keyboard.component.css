@@ -1,0 +1,60 @@
+.btn {
+    font-size: large;
+    border-radius: 0;
+    border-color: #e9e9e9;
+    width: 25%;
+    height: 6rem;
+    color: #b9b9b9;
+    background-color: #ffffff;
+    text-shadow: 2px 2px 4px #d8d8d8;
+}
+
+.btn:hover {
+    color: #fff !important;
+    background-color: #f8a504 !important;
+}
+
+.btn:active {
+    background-color: #f8a504;
+}
+
+.btn:focus {
+    box-shadow: inset 0 0 8px #9e9e9e;
+    background-color: #f8a504;
+    outline:0;
+    color: #b9b9b9 !important;
+  }
+
+  /* Styling for specific buttons */
+#divide {
+      color:#61cfbb;
+      border-bottom: 0;
+      text-shadow: 2px 2px 4px #d8d8d8;
+  }
+
+#multiply {
+    color:#4bbef4;
+    border-top: 0;
+    border-bottom: 0;
+    text-shadow: 2px 2px 4px #d8d8d8;
+}
+
+#substract {
+    color:#f68f86;
+    border-top: 0;
+    border-bottom: 0;
+    text-shadow: 2px 2px 4px #d8d8d8;
+}
+
+#add {
+    color:#c073ed;
+    border-top: 0;
+    text-shadow: 2px 2px 4px #d8d8d8;
+}
+
+#answer {
+    color: #ffffff;
+    background-color:#3fc6ab;
+    border: none;
+    box-shadow: -5px -5px 12px #00000023;
+}

@@ -1,19 +1,29 @@
-#alignleft{
+.alignleft{
     color: #848484;
     text-align: left;
     text-shadow: 2px 2px 4px #d8d8d8;
 }
 
-#display1 {
+.displayTop {
     color: #848484;
     text-align: right;
     text-shadow: 2px 2px 4px #d8d8d8;
     padding: 10px;
 }
 
-#display2{
+.displayBottom{
     color:#f67265;
     text-align: right;
     font-weight: bold;
     text-shadow: 2px 2px 4px #d8d8d8;
+
+}
+
+.text-trucate{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.text-container{
+    height: 50px;
 }

@@ -7,6 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 
 export class ScreenComponent {
-  @Input() display1Text: string;
-  @Input() display2Text: number;
+  @Input() displayTopText: string;
+  @Input() displayBottomText: number;
 }

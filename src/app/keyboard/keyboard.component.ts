@@ -6,9 +6,9 @@ import { Component, EventEmitter, Output, Input, HostListener, OnChanges } from 
   styleUrls: ['./keyboard.component.css']
 })
 
-export class KeyboardComponent{
-  @Output() onAdd2Display1 = new EventEmitter<string>();
-  @Output() onCorrection2Display1 = new EventEmitter<string>();
+export class KeyboardComponent implements OnChanges{
+  @Output() onAdd2DisplayTop = new EventEmitter<string>();
+  @Output() onCorrection2DisplayTop = new EventEmitter<string>();
   @Output() onComputingAnswer = new EventEmitter();
 
   @Input() divideMode: boolean;
@@ -22,7 +22,7 @@ export class KeyboardComponent{
   }
 
   setDivideMode(divideMode: boolean){
-    if (divideMode == true) {
+    if (divideMode === true) {
       this.divideModeDisplay = '÷';
     }
     else{
@@ -30,14 +30,14 @@ export class KeyboardComponent{
     }
   }
 
-  addDisplay1(input: string){
+  addDisplayTop(input: string){
     this.keyInput = input;
-    this.onAdd2Display1.emit(this.keyInput);
+    this.onAdd2DisplayTop.emit(this.keyInput);
   }
 
-  correctionDisplay1(input: string){
+  correctionDisplayTop(input: string){
     this.correction = input;
-    this.onCorrection2Display1.emit(this.correction);
+    this.onCorrection2DisplayTop.emit(this.correction);
   }
 
   computeAnswer(){
@@ -51,17 +51,17 @@ export class KeyboardComponent{
     const key = event.key.toLowerCase();
     event.preventDefault();
     if (key === 'backspace') {
-      this.correctionDisplay1('B');
+      this.correctionDisplayTop('←');
     } else if (key === ',' || key === '.') {
-      this.correctionDisplay1('.');
+      this.correctionDisplayTop('.');
     } else if (key_number >= 0 && key_number < 10) {
-      this.addDisplay1((key_number).toString());
-    } else if (key === '+' || key === '-') {
-      this.addDisplay1(key);
+      this.addDisplayTop((key_number).toString());
+    } else if (key === '+' || key === '-' || key === '%') {
+      this.addDisplayTop(key);
     } else if (key === '/'){
-      this.addDisplay1('÷');
+      this.addDisplayTop('÷');
     } else if (key === '*'){
-      this.addDisplay1('×');
+      this.addDisplayTop('×');
     } else if (key === 'enter') {
       this.computeAnswer();
     }        

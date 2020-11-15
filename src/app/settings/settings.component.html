@@ -1,11 +1,12 @@
-<div id="height">
-    <div id="allignright">
+<div class="height">
+    <div class="allignright">
         <div class="dropdown">
-            <button class="btn btn-default btn-sm " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="btn btn-default btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="glyphicon glyphicon-cog"></span>
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <button class="btn btn-default btn-sm" (click)="setDivideMode()">Set {{string1}} to {{string2}}</button>
+                <button *ngIf="divideMode" class="btn btn-default btn-sm" (click)="setDivideMode()">Set {{stringDivide}} to {{stringPercentage}}</button>
+                <button *ngIf="!divideMode" class="btn btn-default btn-sm" (click)="setDivideMode()">Set {{stringPercentage}} to {{stringDivide}}</button>
             </div>
         </div>
     </div>

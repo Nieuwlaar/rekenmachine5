@@ -4,11 +4,16 @@
     border: 0;
 }
 
-#allignright{
+.allignright{
     position: absolute;
     right: 0;
 }
 
-#height{
+.dropdown-menu{
+    position: relative;
+    text-align: center;
+}
+
+.height{
     height: 16px;
 }

@@ -9,16 +9,12 @@ import { Component, Output, EventEmitter } from '@angular/core';
 export class SettingsComponent {
   @Output() onDivideModeSwitch = new EventEmitter<string>();
 
-  string1 = '÷';
-  string2 = '%';
-  string3 = '';
-
+  stringDivide = '÷';
+  stringPercentage = '%';
+  divideMode = true;
 
   setDivideMode(){
     this.onDivideModeSwitch.emit();
-    // Swap strings
-    this.string3 = this.string1;
-    this.string1 = this.string2;
-    this.string2 = this.string3;
+    this.divideMode = !this.divideMode;
   }
 }

@@ -1,22 +1,21 @@
-<div class="container" id="background50"></div>
-<div id="topspace"></div>
-<div class="container">
+<div id="background50percGreen50percWhite"></div>
+<div class="container topspace">
   <div class="row">
       <div class="col-md-4 nopadding">  
       </div>
-      <div class="col-md-4 nopadding" id="backgroundwhite">
-          <app-settings
+      <div class="col-md-4 nopadding backgroundwhite">
+        <app-settings
           (onDivideModeSwitch)="onDivideModeSwitch()"
-          ></app-settings>
-          <app-screen 
-            #screen
-            [display1Text]="display1Text"
-            [display2Text]="display2Text"
-          ></app-screen>
+        ></app-settings>
+        <app-screen 
+          #screen
+          [displayTopText]="displayTopText"
+          [displayBottomText]="displayBottomText"
+        ></app-screen>
         <app-keyboard 
           [divideMode]="divideMode"
-          (onAdd2Display1)="onAdd2Display1($event)"
-          (onCorrection2Display1)="onCorrection2Display1($event)"
+          (onAdd2DisplayTop)="onAdd2DisplayTop($event)"
+          (onCorrection2DisplayTop)="onCorrection2DisplayTop($event)"
           (onComputingAnswer)="onComputingAnswer()"
         ></app-keyboard>
       </div>

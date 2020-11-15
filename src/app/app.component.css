@@ -3,25 +3,27 @@
     border-color: #c73030;
 }
 
-#background50 {
+#background50percGreen50percWhite {
     position: fixed;
     top: 0;
     left: 0;
     width: 50%;
     height: 100%;
     background-color: #3fc6ab; 
+    
 }
 
-#backgroundwhite {
+.backgroundwhite {
     background-color: white;
     box-shadow: 5px 10px 18px #0000002c;
+    
 }
 
-#topspace{
-    height: 50px;
+.topspace{
+    margin-top: 50px;
 }
 
 .nopadding {
-    padding: 0 !important;
-    margin: 0 !important;
+    padding: 0 ;
+    margin: 0 ;
  }

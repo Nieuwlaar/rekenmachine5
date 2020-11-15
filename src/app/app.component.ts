@@ -8,51 +8,49 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'rekenmachine3';
-  constructor() {};
-  display1Text = '';
-  display2Text = 0;
+  displayTopText = '';
+  displayBottomText = 0;
   answer = 0;
-  temp = '';
   keyInput: string;
   answerGiven = false;
   divideMode = true;
 
   onComputingAnswer(){
     // Preparing string for eval()
-    this.temp = this.display1Text;
-    this.temp = this.temp.replace(/÷/g, "/");
-    this.temp = this.temp.replace(/×/g, "*");
-    this.temp = this.temp.replace(/ANS/g, this.answer.toString());
+    const stringReadyForEval  = this.displayTopText.replace(/÷/g, "/")
+                                  .replace(/×/g, "*")
+                                  .replace(/%/g, "*0.01")
+                                  .replace(/ANS/g, this.answer.toString());
     // Calculating answer
-    this.answer = eval(this.temp);
-    this.display2Text = this.answer;
+    this.answer = eval(stringReadyForEval);
+    this.displayBottomText = this.answer;
     this.answerGiven = true;
   }
 
-  onAdd2Display1(keyInput: string){
-    if (this.answerGiven == true){
-      this.display1Text = 'ANS';
+  onAdd2DisplayTop(keyInput: string){
+    if (this.answerGiven === true){
+      this.displayTopText = 'ANS';
       this.answerGiven = false;
     }
-    this.display1Text = this.display1Text+keyInput;
+    this.displayTopText = this.displayTopText+keyInput;
   }
 
-  onCorrection2Display1(correction: string){
-    if ( correction == 'AC'){
-      this.display1Text = '';
+  onCorrection2DisplayTop(correction: string){
+    if ( correction === 'AC'){
+      this.displayTopText = '';
       this.answerGiven = false;
       this.answer = 0;
-      this.display2Text = 0;
+      this.displayBottomText = 0;
     }
-    else if ( correction == 'C'){
+    else if ( correction === 'C'){
       this.answerGiven = false;
-      this.display1Text = '';
+      this.displayTopText = '';
     }
-    else if ( correction == 'B'){
-      this.display1Text = this.display1Text.slice(0, -1);
+    else if ( correction === '←'){
+      this.displayTopText = this.displayTopText.slice(0, -1);
     }
     else {
-      console.log('POSSIBLE INVALID INPUT onCorrection2Display1()');
+      console.log('POSSIBLE INVALID INPUT onCorrection2DisplayTop()');
     }
   }
 
